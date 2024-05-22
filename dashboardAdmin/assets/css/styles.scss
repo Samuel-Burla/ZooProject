@@ -1,0 +1,295 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+/* Colors */
+$primaryColor: #fffaef;
+$secondaryColor: #596643;
+$tertiaryColor: #86e660;
+$darkGreen: #5ea143;
+$darkGreenStriped: #497e34;
+$textColor: #212427; /* Dark gray*/
+/* Text */
+$HeadlineFontSize: 18px;
+$SubtitleFontSize: 14px;
+$ContentFontSize: 12px;
+$footerHeightMobile: 300px;
+$footerHeightDesktop: 200px;
+$headerHeightMobile: 52px;
+$headerHeightDesktop: 70px;
+$mainHeightMobile: calc($headerHeightMobile + $footerHeightMobile);
+$mainHeightTablet: calc($headerHeightMobile + $footerHeightDesktop);
+$mainHeightDesktop: calc($headerHeightDesktop + $footerHeightDesktop);
+
+button {
+  border: 0;
+}
+
+.button {
+  color: $textColor;
+  background-color: #86e660;
+  padding: 10px;
+  border-radius: 20px 20px 20px 20px;
+}
+.deleteButton{
+  background-color: #ea5858;
+  color: $primaryColor;
+}
+
+body {
+  margin: 0;
+  background-color: $primaryColor;
+}
+
+@media screen and (max-width: 992px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $primaryColor;
+    width: 100vw;
+    height: $headerHeightMobile;
+    background-color: $secondaryColor;
+  }
+  .menu_logo {
+    padding: 0 20px;
+    & > a {
+      color: $primaryColor;
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+  .menu_list {
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 230px;
+    top: -100%;
+    background-color: $secondaryColor;
+    color: $primaryColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    margin-right: 20px;
+    transition: 0.4s;
+    & .menu_item {
+      color: $primaryColor;
+    }
+  }
+
+  .bi-list {
+    font-size: 24px;
+    padding: 15px;
+    color: $primaryColor;
+  }
+  ul {
+    padding-inline-start: 0;
+  }
+  ul > li {
+    padding: 10px;
+  }
+
+  .show_menu {
+    top: 35px;
+    transition: 0.4s;
+  }
+  .desktop {
+    display: none;
+  }
+  .table {
+    max-height: 75vh;
+    width: 100%;
+    color: $primaryColor;
+    overflow-y: scroll;
+    border-radius: 10px;
+    font-size: $ContentFontSize;
+  }
+
+  .table_head {
+    background-color: $secondaryColor;
+  }
+  .table_body {
+    background-color: $darkGreen;
+    .actionButton {
+      color: $primaryColor;
+      text-decoration: none;
+      background-color: $tertiaryColor;
+      border-radius: 15px;
+      height: 30px;
+      padding: 5px;
+      line-height: 20px;
+    }
+    .deleteButton{
+      background-color: #ea5858;
+    }
+  }
+  .striped {
+    background-color: $darkGreenStriped;
+  }
+
+  .table_head,
+  .table_body {
+    display: grid;
+    grid-template-columns: 5% 15% 30% 20% 15% 15%;
+  }
+  .table_head_text,
+  .table_body_text {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    margin: 5px 0;
+  }
+  .text-bg-dark {
+    background-color: $secondaryColor !important;
+  }
+  .table_head_employee,
+  .table_body_employee {
+    grid-template-columns: 40% 15% 15% 15% 15%;
+  }
+  .table_head_services,
+  .table_body_services {
+    grid-template-columns: 7% 13% 60% 20%;
+  }
+  .table_head_animals,
+  .table_body_animals {
+    grid-template-columns: 5% 10% 10% 45% 10% 10% 10%;
+  }
+}
+
+@media screen and (min-width: 993px) {
+  .bootstrap_sidebar {
+    height: 100vh;
+  }
+  .nav-link.active {
+    background-color: $darkGreen !important; /* ====  /!\  =====*/
+  }
+  .mobile {
+    display: none;
+  }
+  main {
+    height: 100vh;
+    width: 100%;
+  }
+  .signoutButton{
+    text-decoration: none;
+    padding: 8px 16px;
+    margin-top: 10px;
+    width: max-content;
+  }
+  .table {
+    max-height: 75vh;
+    width: 100%;
+    color: $primaryColor;
+    overflow: scroll;
+    border-radius: 10px;
+  }
+
+  .table_head {
+    background-color: $secondaryColor;
+  }
+  .table_body {
+    background-color: $darkGreen;
+    .actionButton {
+      color: $primaryColor;
+      text-decoration: none;
+      background-color: $tertiaryColor;
+      margin: 5px;
+      border-radius: 15px;
+      height: 30px;
+      padding: 5px;
+      line-height: 20px;
+    }
+    .deleteButton{
+      background-color: #ea5858;
+    }
+  }
+  .striped {
+    background-color: $darkGreenStriped;
+  }
+
+  .table_head,
+  .table_body {
+    display: grid;
+    grid-template-columns: 5% 15% 30% 20% 15% 15%;
+  }
+  .table_head_text,
+  .table_body_text {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+  }
+  .text-bg-dark {
+    background-color: $secondaryColor !important;
+  }
+  .table_head_employee,
+  .table_body_employee {
+    grid-template-columns: 40% 15% 15% 15% 15%;
+  }
+  .table_head_services,
+  .table_body_services {
+    grid-template-columns: 5% 10% 70% 15%;
+  }
+  .table_head_animals,
+  .table_body_animals {
+    grid-template-columns: 5% 15% 10% 20% 15% 15% 10% 10%;
+  }
+  .table_head_opinion_animals,
+  .table_body_opinion_animals {
+    grid-template-columns: 5% 15% 10% 15% 25% 20% 10%;
+  }
+  .section_form_error {
+    background-color: #ea5858;
+    display: flex;
+    align-items: center;
+    // margin: 0 20px 15px 20px;
+    & p {
+      font-size: $SubtitleFontSize;
+      color: $primaryColor;
+      margin: 10px 10px;
+    }
+  }
+  .section_form_message {
+    background-color: $tertiaryColor;
+    display: flex;
+    align-items: center;
+    // margin: 0 20px 15px 20px;
+    & p {
+      font-size: $SubtitleFontSize;
+      color: $textColor;
+      margin: 10px 10px;
+    }
+  }
+  .section_bigTitle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+
+    img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
+    .section_bigTitle_content {
+      position: absolute;
+      color: #fffaef;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h1 {
+        color: $primaryColor;
+      }
+    }
+  }
+}
